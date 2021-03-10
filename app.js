@@ -59,6 +59,10 @@ app.post('/posteo', async (req, res) => {
             throw 'Error en los parametros requeridos';
         }
 
+        if (texto.lenght > 240){
+            throw 'Error, el posteo no puede contener mas de 240 caracteres';
+        }
+
         let posteo = {
             texto: texto
         }
